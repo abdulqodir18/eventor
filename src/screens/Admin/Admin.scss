@@ -1,0 +1,9 @@
+.admin {
+   display: flex;
+   flex-direction: column;
+   padding-top: 45px;
+}
+.admin__wrapper {
+   display: flex;
+   justify-content: space-between;
+}
