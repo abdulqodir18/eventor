@@ -2,12 +2,14 @@ import "./Login.scss"
 import { Link } from "react-router-dom"
 import { client } from "../../utils/api-client";
 import useToken from "../../hooks/useToken";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 function Login() {
    const [token, setToken] = useToken()
    const phoneNumber = useRef()
    const password = useRef()
+  const [err, setErr] = useState({});
+
 
 
    function Login(e) {
@@ -20,7 +22,7 @@ function Login() {
    }).then(data => {
       setToken(JSON.stringify({token:data.token, id: data.data.userId}))
       window.location = '/'
-   })
+   }).catch( err => setErr(err))
 }
    return (
       <>
@@ -35,6 +37,8 @@ function Login() {
          Do not have account yet? <Link to="./signin" className="login__form-link-auth">Sign in</Link>
          </p>
          <button type="submit" className="login__form-button">Submit</button>
+         {err.success === false && <span className="err">{err.message}</span>}
+
          </form>
       </section>
       </>

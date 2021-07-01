@@ -116,7 +116,7 @@ function Home() {
                   <p className="list-content__category">
                     <b>Category:</b> {e.Types.name}
                   </p>
-                  <Link className="list-content__btn" to={e.userId}>
+                  <Link className="list-content__btn" to={"/single/" + e.userId}>
                     read more
                   </Link>
                 </li>
