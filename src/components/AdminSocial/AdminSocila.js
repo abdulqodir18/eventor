@@ -1,5 +1,4 @@
 import "./AdminSocial.scss"
-import Delete from "../SVGS/Delete"
 import { client } from "../../utils/api-client"
 import useToken from "../../hooks/useToken"
 import { useEffect, useRef, useState } from "react"
@@ -81,7 +80,6 @@ function AdminSocial() {
                </div>
             </div>
             <button className="post__btn-delete" type="button" data-id={e.socialId} onClick={e => Deleted(e)}>
-               <Delete/>
             </button>
          </li>
                ))

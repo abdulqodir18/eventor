@@ -1,5 +1,4 @@
 import "./AdminPost.scss"
-import Delete from "../SVGS/Delete"
 import { client } from "../../utils/api-client"
 import useToken from "../../hooks/useToken"
 import { useEffect, useRef, useState } from "react"
@@ -90,8 +89,7 @@ function AdminPost() {
                            </div>
                         </div>
                         <button className="post__btn-delete" data-id={e.postId} onClick={Deleted}>
-                           <Delete />
-                        </button>
+                           </button>
                      </li>
                   ))
                }
