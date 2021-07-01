@@ -2,17 +2,20 @@ import "./SignIn.scss";
 import { Link } from "react-router-dom";
 import { client } from "../../utils/api-client"
 import useToken  from "../../hooks/useToken"
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 function SignIn() {
    const [token, setToken] = useToken()
+  const [type, setType] = useState([]);
+  const [err, setErr] = useState(true);
+
 
    const firstName = useRef()
    const lastName = useRef()
    const password = useRef()
    const phoneNumber = useRef()
-  //  const typeId = useRef()
+   const typeId = useRef()
 
   function Register(e) {
      e.preventDefault()
@@ -22,13 +25,19 @@ function SignIn() {
          "lastName": lastName.current.value,
          "password": password.current.value,
          "phoneNumber": phoneNumber.current.value,
-         "typeId":"76177434-c160-4e74-896f-c906b41e0256"
+         "typeId":typeId.current.value
       }
    }).then(data => {
+     console.log(data);
       setToken(JSON.stringify({token:data.token, id: data.data.userId}))
       window.location = '/'
-   })
+   }).catch(err => setErr(err))
   }
+
+   useEffect(()=> {
+    client("types").then((data) => setType(data));
+   }, [])
+
   return (
     <>
       <section className="login container">
@@ -89,6 +98,13 @@ function SignIn() {
             placeholder="secret key"
             required=""
           />
+          <select ref={typeId} className="register__form-input">
+            {
+              type.success && type.data.map((e) => (
+                <option key={e.typeId} value={e.typeId}>{e.name}</option>
+              ))
+            }
+          </select>
           <p className="register__form-desc">
             Have You already account? <Link to="./login" className="register__form-link-auth">
               Login
@@ -97,6 +113,8 @@ function SignIn() {
           <button type="submit" className="register__form-button">
             Submit
           </button>
+
+          {err.success === false && <span className="err">{err.message}</span>}
         </form>
       </section>
     </>

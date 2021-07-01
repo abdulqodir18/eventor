@@ -1,5 +1,15 @@
 import "./HomeStatic.scss"
+import { client } from "../../utils/api-client";
+import { useEffect, useState } from "react";
+
+
 function HomeStatic() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(()=> {
+    client('posts?limit=9&page=1').then(data => setData(data))
+  }, [])
   return (
     <>
       <section className="about">
@@ -21,25 +31,21 @@ function HomeStatic() {
         </div>
       </section>
 
-      <section className="categories">
+      {data.data?.length > 0 && <section className="categories">
         <div className="container about__container">
           <h1 className="about__title">Categories Lorem Ipsum is simpl</h1>
           <ul className="about__lit">
-            <li className="categorys__item">
-               <img src="https://picsum.photos/400/250?100" alt="test" width="400" height="250"/>
-               <p className="category__text">O’z muammoingizni batafsil bayon qiling</p>
-            </li>
-            <li className="categorys__item">
-               <img src="https://picsum.photos/400/250?500" alt="test" width="400" height="250"/>
-               <p className="category__text">O’z muammoingizni batafsil bayon qiling</p>
-            </li>
-            <li className="categorys__item">
-               <img src="https://picsum.photos/400/250?850" alt="test" width="400" height="250"/>
-               <p className="category__text">O’z muammoingizni batafsil bayon qiling</p>
-            </li>
+            {
+              data.data?.length && data.data.map(e => (
+              <li className="categorys__item">
+                <img src="https://picsum.photos/400/250?100" alt="test" width="400" height="250"/>
+                <p className="category__text">{e.title}</p>
+              </li>
+              ))
+            }
           </ul>
         </div>
-      </section>
+      </section>}
 
       <section className="reviews">
         <div className="container reviews__container">
