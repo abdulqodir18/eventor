@@ -24,7 +24,7 @@ function App() {
 
             <div className="header__inner">
                 {token ? <Link className="header__btn header__login" to="/" onClick={() => setToken(false)}>Log out</Link> : <Link className="header__btn header__login" to="/login">Login</Link>}
-               {token && <Link className="header__btn header__checkIn" to={`/admin/` + token.id}>Check In</Link>}
+               {token && <Link className="header__btn header__checkIn" to={`/admin/` + token.id}>Profile</Link>}
             </div>
             </div>
             
