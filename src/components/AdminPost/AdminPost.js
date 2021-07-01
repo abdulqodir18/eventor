@@ -72,7 +72,6 @@ function AdminPost() {
 
             <h2 className="post__title">Your postes</h2>
             <ul className="post__list">
-               {console.log(post)}
                {
                  post.length && post.map(e => (
                     
