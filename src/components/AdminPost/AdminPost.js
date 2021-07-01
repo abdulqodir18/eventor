@@ -10,6 +10,8 @@ function AdminPost() {
    const [sToken, setToken] = useToken()
    const tokenData = JSON.parse(sToken)
    const [data, setData] = useState([])
+   const [err, setErr] = useState({})
+   const [photoUpload, setPhotoUpload] = useState(false)
    const [post, setPost] = useState(data)
    const photo = useRef()
    const bio = useRef()
@@ -51,24 +53,26 @@ function AdminPost() {
          },
       }).then((data) => data.json()).then(data => {
          setPost([...post, data.data])
-      })
+      }).catch(err => setErr(err))
    }
    return (
       <>
          <div className="wrapper post-wrapper">
             <form className="update__form  post__form" onSubmit={Create}>
                <div className="uploade__inner">
-                  <img className="uploade__img" src="" alt="" width="300" height="300" />
-                  <label className="post__img-label">
+                  {/* <img className="uploade__img" src="" alt="" width="300" height="300" /> */}
+                  <label className={ photoUpload ? "post__img-label post__img-label--acv" : "post__img-label"}>
                      <span className="uploade__img-label-span">Upload</span>
-                     <input ref={photo} className="visually-hidden uploade__img-input" type="file" required />
+                     <input ref={photo} className="visually-hidden uploade__img-input" type="file" required onChange={()=> setPhotoUpload(true)} />
                   </label>
                </div>
                <label className="update__label post__label">
                   <span>Bio</span>
-                  <textarea ref={bio} required className="update__input post__textarea" minLength="50" placeholder="Lorem Ipsum is simpl" cols="30" rows="10"></textarea>
+                  <textarea ref={bio} required className="update__input post__textarea" minLength="5" placeholder="Lorem Ipsum is simpl" cols="30" rows="10"></textarea>
                </label>
-               <button className="update__btn post__btn" type="submit" >Saqlamoq</button>
+               <button className="update__btn post__btn" type="submit" >Save</button>
+               {/* {err.success === false && <span className="err">{err.message}</span>} */}
+               
             </form>
 
             <h2 className="post__title">Your postes</h2>

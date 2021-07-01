@@ -4,18 +4,22 @@
    margin-bottom: 50px;
 }
 .post__form {
-   align-items: flex-end;
+   align-items: flex-start;
    justify-content: space-between;
 }
 .post__img-label {
-   position: absolute;
-   left: 50%;
-   bottom: 30px;
-   transform: translateX(-50%);
    padding: 10px 15px;
-   background: #FFFFFF;
+   background:  rgba(0, 136, 220, 0.109);
    border-radius: 92.7229px;
    cursor: pointer;
+   margin-top: 20px;
+   width: 200px;
+   
+   &--acv {
+      background:  rgba(30, 143, 255, 0.8);
+      padding-top: 20px;
+      padding-bottom: 20px;
+   }
 }
 .post__label {
    margin-right: 50px;
@@ -26,6 +30,7 @@
 }
 .post__btn {
    margin-bottom: 20px;
+   align-self: flex-end;
 }
 .post__title {
    margin: 0;

@@ -14,6 +14,8 @@ function AdminUpdata() {
    const [sToken, setToken] = useToken()
    const token = JSON.parse(sToken).token
    const tokenId = JSON.parse(sToken).id
+   const [err, setErr] = useState({})
+
 
    const [data, setData] = useState([])
    const {id} = useParams()
@@ -36,8 +38,14 @@ function AdminUpdata() {
             authorization:`Bearer ${token}`,
 	         'Content-Type': "application/json"
          }
-      }).then(res => res.json()).then(data =>  window.location = "/admin/"+tokenId
-      )
+      }).then(res => res.json())
+      .then((data) =>  {
+         if (!data.success) {
+            setErr(data)
+         } else {
+            window.location = "/admin/"+tokenId     
+         }
+      })
    }
 
    return(
@@ -67,7 +75,8 @@ function AdminUpdata() {
                     <span>Bio</span>
                     <textarea required className="update__input update__textarea" defaultValue={data.data.bio} cols="30" rows="10" ref={bio}></textarea>
                  </label>
-                 <button className="update__btn" type="submit">Saqlamoq</button>
+                  {err.success === false && <span className="err err__update">{err.message}</span>}
+                 <button className="update__btn" type="submit">Save</button>
               </div>
            </form>
            }

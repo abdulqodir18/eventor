@@ -51,7 +51,7 @@ function AdminUpload() {
                      <span className="uploade__img-label-span"> Upload</span>
                      <input ref={photo} className="visually-hidden uploade__img-input" type="file" required />
                   </label>
-                  <button className="update__btn" type="submit">Saqlamoq</button>
+                  <button className="update__btn" type="submit">Save</button>
                </div>
             </form>
             <div className="uploade__info">

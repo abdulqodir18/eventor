@@ -12,6 +12,7 @@
 }
 .update__form {
    display: flex;
+   position: relative;
 }
 .update__form-wrapper {
    display: flex;
@@ -65,4 +66,9 @@
    line-height: 24px;
    color: #FFFFFF;
    cursor: pointer;
+} 
+.err__update {
+   position: absolute;
+   bottom: 10px;
+   left: 0;
 }

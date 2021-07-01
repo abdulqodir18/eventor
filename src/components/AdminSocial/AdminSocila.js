@@ -13,6 +13,9 @@ function AdminSocial() {
    const link = useRef()
    const [post, setPost] = useState([])
 
+   const [err, setErr] = useState({})
+
+
    
    const [sToken, setToken] = useToken()
    const tokenData = JSON.parse(sToken)
@@ -26,7 +29,7 @@ function AdminSocial() {
             name: name.current.value,
             link: link.current.value
          }
-      }).then(data => setPost([...post, data.data]))
+      }).then(data => setPost([...post, data.data])).catch(err => setErr(err))
    }
 
    ;async function Deleted(e) {
@@ -46,6 +49,8 @@ function AdminSocial() {
       client("socials/user/"+tokenData.id).then(data => setPost(data.data))
    }, [tokenData.id])
 
+   console.log(err);
+
    return(
       <>
          <div className="wrapper post-wrapper">
@@ -58,7 +63,9 @@ function AdminSocial() {
                <span>Link</span>
                <input required ref={link} className="update__input social__input" type="text"/>
             </label>
-            <button className="update__btn" type="submit">Saqlamoq</button>
+            <button className="update__btn" type="submit">Save</button> 
+            {err.success === false && <span className="err err__social">{err.message}</span>}
+
          </form>
 
          <h2 className="post__title">Your postes</h2>
