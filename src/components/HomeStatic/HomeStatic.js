@@ -16,18 +16,18 @@ function HomeStatic() {
     <>
       <section className="about">
         <div className="container about__container">
-          <h1 className="about__title">Sayt qanday ishlaydi</h1>
+          <h1 className="about__title">How the site works</h1>
           <ul className="about__lit">
             <li className="about__item about__item--start">
-               <p className="about__text">Muammoingizni hal qiladigan mutaxassis toping! </p>
+               <p className="about__text">Find an expert who can solve your problem!</p>
             </li>
             <hr className="hr" />
             <li className="about__item about__item--middle">
-               <p className="about__text">U bilan aloqaga chiqing</p>
+               <p className="about__text">Contact the specialist who will solve your problem</p>
             </li>
             <hr className="hr" />
             <li className="about__item about__item--end">
-               <p className="about__text">Ishingizni hal qiling</p>
+               <p className="about__text">Solve your problem and relax</p>
             </li>
           </ul>
         </div>
@@ -35,7 +35,7 @@ function HomeStatic() {
 
       {data.data?.length > 0 && <section className="categories">
         <div className="container about__container">
-          <h1 className="about__title">Categories Lorem Ipsum is simpl</h1>
+          <h1 className="about__title">The work done by our adventurers</h1>
           <ul className="about__lit">
             {
               data.data?.length && data.data.map(e => (
