@@ -1,7 +1,9 @@
 import "./HomeStatic.scss"
 import { client } from "../../utils/api-client";
 import { useEffect, useState } from "react";
+import config from "../../config"
 
+const REACT_SHORT_URL = config.REACT_SHORT_URL
 
 function HomeStatic() {
 
@@ -38,7 +40,7 @@ function HomeStatic() {
             {
               data.data?.length && data.data.map(e => (
               <li className="categorys__item">
-                <img src="https://picsum.photos/400/250?100" alt="test" width="400" height="250"/>
+                <img src={REACT_SHORT_URL+e.imageSrc} alt="test" width="400" height="250"/>
                 <p className="category__text">{e.title}</p>
               </li>
               ))
