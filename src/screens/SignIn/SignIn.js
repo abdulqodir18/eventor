@@ -1,5 +1,5 @@
 import "./SignIn.scss";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { client } from "../../utils/api-client"
 import useToken  from "../../hooks/useToken"
 import { useRef } from "react";
@@ -12,7 +12,7 @@ function SignIn() {
    const lastName = useRef()
    const password = useRef()
    const phoneNumber = useRef()
-   const typeId = useRef()
+  //  const typeId = useRef()
 
   function Register(e) {
      e.preventDefault()

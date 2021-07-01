@@ -20,9 +20,11 @@ function Home() {
     client(`users?limit=${page}&page=1`).then((data) => setData(data));
     client(`users?limit=${50000}&page=1`).then((data) => setDataSearch(data));
     client("types").then((data) => setType(data));
-    client(`/user/type/${typeId}?limit=${20}&page=1`).then((data) =>
-      setTypeByID(data)
-    );
+    if(typeId) {
+      client(`user/type/${typeId}?limit=20&page=1`).then((data) =>
+        setTypeByID(data)
+      );
+    }
   }, [typeId, page]);
 
 
@@ -31,7 +33,7 @@ function Home() {
       const Data = dataSearch?.data?.filter(e => e.firstName.toLowerCase().includes(search.toLowerCase()))
       setDataS(Data)
    }
-  }, [search])
+  }, [search, dataSearch])
   return (
     <>
       <main className="main">

@@ -1,11 +1,11 @@
-import { Switch, Route, useParams } from "react-router-dom"
+import { Switch, Route } from "react-router-dom"
 import AdminHeader from "../../components/AdminHeader/AdminHeader"
 import AdminNavbar from "../../components/AdminNavbar/AdminNavbar"
 import AdminPost from "../../components/AdminPost/AdminPost"
 import AdminSocial from "../../components/AdminSocial/AdminSocila"
 import AdminUpdata from "../../components/AdminUpdate/AdminUpdate"
 import AdminUpload from "../../components/AdminUpload/AdminUpload"
-import useToken from "../../hooks/useToken"
+// import useToken from "../../hooks/useToken"
 import "./Admin.scss"
 
 function Home() {
