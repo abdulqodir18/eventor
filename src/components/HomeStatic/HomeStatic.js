@@ -19,15 +19,15 @@ function HomeStatic() {
           <h1 className="about__title">How the site works</h1>
           <ul className="about__lit">
             <li className="about__item about__item--start">
-               <p className="about__text">Find an expert who can solve your problem!</p>
+               <p className="about__text">Find an eventor who can organize your event!</p>
             </li>
             <hr className="hr" />
             <li className="about__item about__item--middle">
-               <p className="about__text">Contact the specialist who will solve your problem</p>
+               <p className="about__text">Contact the eventor to make a deal for organizing event!</p>
             </li>
             <hr className="hr" />
             <li className="about__item about__item--end">
-               <p className="about__text">Solve your problem and relax</p>
+               <p className="about__text">Hold your event and rest!</p>
             </li>
           </ul>
         </div>
@@ -52,43 +52,37 @@ function HomeStatic() {
       <section className="reviews">
         <div className="container reviews__container">
           <h2 className="reviews__header">
-            Delivering real results for top companies
+          Delivering the comments of Eventors on website usefulness! 
           </h2>
           <ul className="reviews__list">
             <li className="reviews__item">
               <p className="reviews__desc">
                 {" "}
-                “The team perfectly fit the specialized skill set required. They
-                focused on the most essential features helping us launch the
-                platform eight months faster than planned.”
+                "The website helped the agency a lot, as we worked in traditional way of finding customers. Website provided us the chance to go online and make good sales!" 
               </p>
               <div className="reviews__user">
-                <p className="reviews__user-name">Kady Baker</p>
-                <p className="reviews__user-job">Product Manager at Bookmark</p>
+                <p className="reviews__user-name">Amirullaeva Farangiz</p>
+                <p className="reviews__user-job">Project Manager of YourEvents agency</p>
               </div>
             </li>
             <li className="reviews__item">
               <p className="reviews__desc">
                 {" "}
-                “The team perfectly fit the specialized skill set required. They
-                focused on the most essential features helping us launch the
-                platform eight months faster than planned.”
+                "I was always getting trouble on finding the client and getting job offers, however, Eventor.uz gave me an opportunity to get new clients on the platform where majority of the Event makers gathered"
               </p>
               <div className="reviews__user">
-                <p className="reviews__user-name">Aiysha Reese</p>
-                <p className="reviews__user-job">Founder of Manage</p>
+                <p className="reviews__user-name">Russel</p>
+                <p className="reviews__user-job">Professional DJ</p>
               </div>
             </li>
             <li className="reviews__item">
               <p className="reviews__desc">
                 {" "}
-                “The team perfectly fit the specialized skill set required. They
-                focused on the most essential features helping us launch the
-                platform eight months faster than planned.”
+                "We have been getting less clients over the past 6 moths until we registered on the Eventor.uz. The website changed the restaurant's online presence completely, as we already had social media pages to interact with customers."
               </p>
               <div className="reviews__user">
-                <p className="reviews__user-name">Arthur Clarke</p>
-                <p className="reviews__user-job">Co-founder of MyPhysio</p>
+                <p className="reviews__user-name">Kseniya Pak </p>
+                <p className="reviews__user-job">Oq Saroy restaurant</p>
               </div>
             </li>
           </ul>

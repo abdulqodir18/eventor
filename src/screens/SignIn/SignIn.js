@@ -42,7 +42,7 @@ function SignIn() {
     <>
       <section className="login container">
         <form className="register__form" onSubmit={ e => Register(e) }>
-          <h1 className="register__title">Ro'yxatdan o'tish</h1>
+          <h1 className="register__title">Login</h1>
           <div className="register__form-top">
             <div className="reg-in">
               <label  className="register__form-label" htmlFor="first-Name">

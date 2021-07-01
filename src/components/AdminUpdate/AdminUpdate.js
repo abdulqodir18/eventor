@@ -56,16 +56,16 @@ function AdminUpdata() {
               <div className="update__form-wrapper">
                  <div className="update__inner">
                     <label className="update__label">
-                       <span>Ism</span>
+                       <span>First name</span>
                        <input required ref={firstName} className="update__input" defaultValue={data.data.firstName} type="text"/>
                     </label>
                     <label className="update__label">
-                       <span>Familiya</span>
+                       <span>Last name</span>
                        <input required ref={lastName} className="update__input" defaultValue={data.data.lastName} type="text"/>
                     </label>
                  </div>
                  <label className="update__label">
-                    <span>Telefon raqamingiz</span>
+                    <span>Phone number</span>
                     <input required ref={phoneNumber} className="update__input" defaultValue={data.data.phoneNumber} type="tel" placeholder="98 989-24-24" pattern="^(?:\d{10,12}|\+\d{10,12}|\w+@\w+\.\w{2,4})$"/>
                  </label>
               </div>

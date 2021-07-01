@@ -55,11 +55,11 @@ function AdminSocial() {
          <div className="wrapper post-wrapper">
          <form className="social__form" onSubmit={e => Create(e)}>
             <label className="update__label">
-               <span>Ism</span>
+               <span>Social Media name</span>
                <input required ref={name} className="update__input social__input" type="text"/>
             </label>
             <label className="update__label">
-               <span>Link</span>
+               <span>Social media link</span>
                <input required ref={link} className="update__input social__input" type="text"/>
             </label>
             <button className="update__btn" type="submit">Save</button> 
@@ -67,7 +67,7 @@ function AdminSocial() {
 
          </form>
 
-         <h2 className="post__title">Your postes</h2>
+         <h2 className="post__title">Your links</h2>
 
          <ul className="social__list">
             {

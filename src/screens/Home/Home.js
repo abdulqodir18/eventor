@@ -42,7 +42,7 @@ function Home() {
       <main className="main">
 
         <div className="container search">
-          <h1 className="main__title">Find help for orginize your events</h1>
+          <h1 className="main__title">Find help to organize your events</h1>
           <form className="search__form" onSubmit={e => {
             e.preventDefault();
             setSearch(searchInp.current.value)
@@ -117,7 +117,7 @@ function Home() {
                     <b>Category:</b> {e.Types.name}
                   </p>
                   <Link className="list-content__btn" to={"/single/" + e.userId}>
-                    read more
+                    view profile
                   </Link>
                 </li>
               ))}
@@ -149,7 +149,7 @@ function Home() {
                     className="list-content__btn"
                     to={"/single/" + e.userId}
                   >
-                    read more
+                    view profile
                   </Link>
                 </li>
               ))}
@@ -188,7 +188,7 @@ function Home() {
                     className="list-content__btn"
                     to={"/single/" + e.userId}
                   >
-                    read more
+                    view profile
                   </Link>
                 </li>
               ))}

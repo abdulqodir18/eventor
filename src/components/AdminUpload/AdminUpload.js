@@ -55,8 +55,8 @@ function AdminUpload() {
                </div>
             </form>
             <div className="uploade__info">
-               <h2 className="uploade__title">Tavsiya</h2>
-               <p className="uploade__text">Cursus eget scelerisque in erat adipiscing purus. Dolor rhoncus est sed posuere malesuada aliquam nam. Pellentesque neque elementum tincidun.</p>
+               <h2 className="uploade__title">Hint</h2>
+               <p className="uploade__text">Upload the best picture of yours or best logo of the company for clients to recognize you.</p>
             </div>
          </div>
       </>

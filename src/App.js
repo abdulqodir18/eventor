@@ -11,37 +11,42 @@ import SignIn from "./screens/SignIn/SignIn"
 
 
 function App() {
-   const [sToken, setToken] = useToken()
-   const token = JSON.parse(sToken)
+    const [sToken, setToken] = useToken()
+    const token = JSON.parse(sToken)
 
-    return( 
+    return (
         <>
-        <header className="site-header">
-            <div className="container site-header__container">
-            <Link className="header__link-log" to="/">
-                <img src={Logo} alt=""  width="100" height="40"/>
-            </Link>
+            <header className="site-header">
+                <div className="container site-header__container">
+                    <Link className="header__link-log" to="/">
+                        <img src={Logo} alt="" width="100" height="40" />
+                    </Link>
 
-            <div className="header__inner">
-                {token ? <Link className="header__btn header__login" to="/" onClick={() => setToken(false)}>Log out</Link> : <Link className="header__btn header__login" to="/login">Login</Link>}
-               {token && <Link className="header__btn header__checkIn" to={`/admin/` + token.id}>Profile</Link>}
-            </div>
-            </div>
-            
-        </header>
+                    <div className="header__inner">
+                        {token ? <Link className="header__btn header__login" to="/" onClick={() => setToken(false)}>Log out</Link> : (
+                            <>
+                                <Link className="header__btn header__login" to="/login">Login</Link>
+                                <Link className="header__btn header__login" to="/signin">Sign in</Link>
+                            </>
+                        )}
+                        {token && <Link className="header__btn header__checkIn" to={`/admin/` + token.id}>Profile</Link>}
+                    </div>
+                </div>
+
+            </header>
 
             <Switch>
-                <Route exact path="/" component={Home}/>
-                <Route exact path="/single/:id" component={SinglePage}/>
-                <Route  path="/login" component={Login}/>
-                <Route path="/signin" component={SignIn}/>
-                <Route path="/admin/:id" component={Admin}/>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/single/:id" component={SinglePage} />
+                <Route path="/login" component={Login} />
+                <Route path="/signin" component={SignIn} />
+                <Route path="/admin/:id" component={Admin} />
             </Switch>
 
             <footer className="footer">
                 <div className="container footer__container">
                     <Link className="footer__logo-link" to="/">
-                        <img src={Logo} alt=""  width="100" height="40"/>
+                        <img src={Logo} alt="" width="100" height="40" />
                     </Link>
                     <p className="footer__text">Copyright © 2021. <b>Eventor</b>. All rights reserved.</p>
                 </div>

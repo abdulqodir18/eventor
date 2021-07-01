@@ -66,15 +66,15 @@ function AdminPost() {
                   </label>
                </div>
                <label className="update__label post__label">
-                  <span>Bio</span>
-                  <textarea ref={bio} required className="update__input post__textarea" minLength="5" placeholder="Lorem Ipsum is simpl" cols="30" rows="10"></textarea>
+                  <span>Post description</span>
+                  <textarea ref={bio} required className="update__input post__textarea" minLength="5" placeholder="Describe the event that you held!" cols="30" rows="10"></textarea>
                </label>
                <button className="update__btn post__btn" type="submit" >Save</button>
                {/* {err.success === false && <span className="err">{err.message}</span>} */}
                
             </form>
 
-            <h2 className="post__title">Your postes</h2>
+            <h2 className="post__title">Your posts</h2>
             <ul className="post__list">
                {
                   post.length && post.map(e => (

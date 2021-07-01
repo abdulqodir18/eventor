@@ -28,7 +28,7 @@ function Login() {
       <>
       <section className="login container">
       <form className="login__form" onSubmit={e => Login(e)}>
-         <h1 className="login__title">Ro'yxatdan o'tish  </h1>
+         <h1 className="login__title">Login</h1>
          <label className="login__form-label" htmlFor="phone">Phone number</label>
          <input ref={phoneNumber} className="login__form-input" type="tel" name="phone" id="phone" placeholder="+998901234567" required pattern="^(?:\d{10,12}|\+\d{10,12}|\w+@\w+\.\w{2,4})$"/>
          <label className="login__form-label" htmlFor="password">Password</label>
