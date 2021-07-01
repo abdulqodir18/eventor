@@ -7,15 +7,15 @@ function HomeStatic() {
           <h1 className="about__title">Sayt qanday ishlaydi</h1>
           <ul className="about__lit">
             <li className="about__item about__item--start">
-               <p className="about__text">O’z muammoingizni batafsil bayon qiling</p>
+               <p className="about__text">Muammoingizni hal qiladigan mutaxassis toping! </p>
             </li>
             <hr className="hr" />
             <li className="about__item about__item--middle">
-               <p className="about__text">O’z muammoingizni batafsil bayon qiling</p>
+               <p className="about__text">U bilan aloqaga chiqing</p>
             </li>
             <hr className="hr" />
             <li className="about__item about__item--end">
-               <p className="about__text">O’z muammoingizni batafsil bayon qiling</p>
+               <p className="about__text">Ishingizni hal qiling</p>
             </li>
           </ul>
         </div>

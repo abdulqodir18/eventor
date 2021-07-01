@@ -14,7 +14,6 @@ function App() {
    const [sToken, setToken] = useToken()
    const token = JSON.parse(sToken)
 
-    // setToken()
     return( 
         <>
         <header className="site-header">

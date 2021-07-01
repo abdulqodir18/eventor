@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { client } from "../../utils/api-client"
 import "./AdminUpdate.scss"
 import useToken from "../../hooks/useToken"
+import config from "../../config"
 
-
-
+const REACT_SHORT_URL = config.REACT_SHORT_URL
 function AdminUpdata() {
    const firstName = useRef()
    const lastName = useRef()
@@ -24,7 +24,7 @@ function AdminUpdata() {
 
    function Update(e) {
       e.preventDefault()
-      fetch(`http://eventor.uz:5000/api/user`, {
+      fetch(`${REACT_SHORT_URL}/api/user`, {
          method: 'PUT',
          body: JSON.stringify({
             "firstName": firstName.current.value,

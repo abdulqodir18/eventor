@@ -5,8 +5,9 @@ import useToken from "../../hooks/useToken"
 import { useEffect, useRef, useState } from "react"
 import moment from "moment"
 
+import config from "../../config"
 
-
+const REACT_SHORT_URL = config.REACT_SHORT_URL
 function AdminSocial() {
    const name = useRef()
    const link = useRef()
@@ -30,7 +31,7 @@ function AdminSocial() {
 
    ;async function Deleted(e) {
       let id = e.target.dataset.id
-      await fetch(`http://eventor.uz:5000/api/social/${id}`, {
+      await fetch(`${REACT_SHORT_URL}/api/social/${id}`, {
          method: 'DELETE',
          headers: {
             authorization:`Bearer `+tokenData.token,
